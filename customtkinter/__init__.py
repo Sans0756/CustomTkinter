@@ -108,8 +108,7 @@ class _Showroom(CTk):
         super().__init__()
 
         # configure window
-        self.title("CustomTkinter complex_example.py")
-        self.geometry(f"{1100}x{580}")
+        self.title("CustomTkinter Showroom")
 
         self.new_theme: Optional[str] = None
 

@@ -90,6 +90,7 @@ class CTkOptionMenu(CTkBaseClass):
                                            hover_color=dropdown_hover_color,
                                            text_color=dropdown_text_color,
                                            font=dropdown_font)
+        self._close_on_next_click: bool = False
 
         # configure grid system (1x1)
         self.grid_rowconfigure(0, weight=1)
@@ -346,10 +347,12 @@ class CTkOptionMenu(CTkBaseClass):
             return super().cget(attribute_name)
 
     def _open_dropdown_menu(self):
+        self._close_on_next_click = True
         self._dropdown_menu.open(self.winfo_rootx(),
                                  self.winfo_rooty() + self._apply_widget_scaling(self._current_height + 0))
 
     def _on_enter(self, event=0):
+        self._close_on_next_click = self._dropdown_menu.is_open()
         if self._hover is True and self._state == tkinter.NORMAL and len(self._values) > 0:
             # set color of inner button parts to hover color
             self._canvas.itemconfig("inner_parts_right",
@@ -400,7 +403,10 @@ class CTkOptionMenu(CTkBaseClass):
             return self._values.index(value)
 
     def _clicked(self, event=0):
-        if self._state is not tkinter.DISABLED and len(self._values) > 0:
+        if self._close_on_next_click:
+            self._dropdown_menu.close()
+            self._close_on_next_click = False
+        elif self._state is not tkinter.DISABLED and len(self._values) > 0:
             self._open_dropdown_menu()
 
     def bind(self, sequence: str = None, command: Callable = None, add: Union[str, bool] = True):

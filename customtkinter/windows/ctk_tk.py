@@ -79,6 +79,8 @@ class CTk(CTK_PARENT_CLASS, CTkAppearanceModeBaseClass, CTkScalingBaseClass):
 
         self.bind('<Configure>', self._update_dimensions_event)
         self.bind('<FocusIn>', self._focus_in_event)
+        #allows CTkEntry and CTkTextbox to lose focus
+        self.bind_all("<Button-1>", lambda event: event.widget.focus_set(), add=True)
 
     def destroy(self):
         self._disable_macos_dark_title_bar()
