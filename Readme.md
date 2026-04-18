@@ -29,12 +29,12 @@ Official website: https://customtkinter.tomschimansky.com/
 </h3>
 </div>
 
-CustomTkinter is a python UI-library based on Tkinter, which provides new, modern and
+Luna Project is a python UI-library based on Tkinter, which provides new, modern and
 fully customizable widgets. They are created and used like normal Tkinter widgets and
 can also be used in combination with normal Tkinter elements. The widgets
 and the window colors either adapt to the system appearance or the manually set mode
-('light', 'dark'), and all CustomTkinter widgets and windows support HighDPI scaling
-(Windows, macOS). With CustomTkinter you'll get a consistent and modern look across all
+('light', 'dark'), and all Luna Project widgets and windows support HighDPI scaling
+(Windows, macOS). With Luna Project you'll get a consistent and modern look across all
 desktop platforms (Windows, macOS, Linux).
 
 ![](documentation_images/complex_example_dark_Windows.png)
@@ -91,7 +91,7 @@ you can find further information on the appearance mode, scaling, themes and all
 
 ### Appearance mode change and scaling change
 
-CustomTkinter can adapt to the Windows 10/11 light or dark mode:
+Luna Project can adapt to the Windows 10/11 light or dark mode:
 
 https://user-images.githubusercontent.com/66446067/204672968-6584f360-4c52-434f-9c16-25761341368b.mp4
 
